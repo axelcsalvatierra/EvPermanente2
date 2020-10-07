@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Inicio de Sesion-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EvPermanente2" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                                             <constraint firstAttribute="height" constant="38" id="aoM-jy-QdK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                        <state key="normal" title="Hola">
+                                        <state key="normal" title="Ingresar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -158,13 +158,14 @@
                             <constraint firstItem="9fH-mD-kV8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="w11-cI-Nhx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Inicio de Sesion" id="2Y8-h7-fQQ"/>
                     <connections>
                         <outlet property="constraintBottomScroll" destination="vBl-wQ-xMh" id="5tD-Xf-m3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197.10144927536234" y="118.52678571428571"/>
+            <point key="canvasLocation" x="713.04347826086962" y="118.52678571428571"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mdi-Me-G8y">
@@ -173,13 +174,67 @@
                     <view key="view" contentMode="scaleToFill" id="ofJ-LS-AOd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGh-kk-Uat">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j99-tk-Dpl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="WOZ-BV-vpz"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vi-6P-t5N">
+                                        <rect key="frame" x="41" y="176" width="333" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWl-Je-qIa">
+                                        <rect key="frame" x="119" y="75" width="111" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo ISIL.png" translatesAutoresizingMaskIntoConstraints="NO" id="D6I-Jo-R0l">
+                                        <rect key="frame" x="233" y="72" width="104" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desarrollado por" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYv-3u-FUj">
+                                        <rect key="frame" x="188" y="10" width="127" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ISIL Aprende Haciendo.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-or-ZcS">
+                                        <rect key="frame" x="312" y="8" width="94" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="j99-tk-Dpl" firstAttribute="leading" secondItem="DGh-kk-Uat" secondAttribute="leading" id="1oB-oF-jlJ"/>
+                                    <constraint firstItem="j99-tk-Dpl" firstAttribute="width" secondItem="DGh-kk-Uat" secondAttribute="width" id="IFm-Tc-ou8"/>
+                                    <constraint firstAttribute="trailing" secondItem="j99-tk-Dpl" secondAttribute="trailing" id="KJw-TU-3R7"/>
+                                    <constraint firstItem="j99-tk-Dpl" firstAttribute="top" secondItem="DGh-kk-Uat" secondAttribute="top" id="p8g-Sd-bGa"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qOx-rC-hla"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DGh-kk-Uat" secondAttribute="bottom" id="3ri-in-yeU"/>
+                            <constraint firstItem="DGh-kk-Uat" firstAttribute="top" secondItem="qOx-rC-hla" secondAttribute="top" id="DCt-Fp-tEV"/>
+                            <constraint firstItem="DGh-kk-Uat" firstAttribute="leading" secondItem="qOx-rC-hla" secondAttribute="leading" id="Kjx-By-94s"/>
+                            <constraint firstItem="DGh-kk-Uat" firstAttribute="trailing" secondItem="qOx-rC-hla" secondAttribute="trailing" id="buS-XD-mrF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLA-9w-2rq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="119"/>
+            <point key="canvasLocation" x="1446.376811594203" y="118.52678571428571"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z7K-db-hZE">
@@ -194,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1K-p9-Eyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="119"/>
+            <point key="canvasLocation" x="2184.057971014493" y="118.52678571428571"/>
         </scene>
     </scenes>
     <resources>
