@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52E246502533C10C00EDD2EA /* RegistrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */; };
+		52E246532533D5C600EDD2EA /* RestablecerContrasenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */; };
 		52F8AB92252D63B90016973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB91252D63B90016973A /* AppDelegate.swift */; };
 		52F8AB94252D63B90016973A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB93252D63B90016973A /* SceneDelegate.swift */; };
 		52F8AB96252D63B90016973A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB95252D63B90016973A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioViewController.swift; sourceTree = "<group>"; };
+		52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestablecerContrasenaViewController.swift; sourceTree = "<group>"; };
 		52F8AB8E252D63B90016973A /* EvPermanente2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvPermanente2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F8AB91252D63B90016973A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F8AB93252D63B90016973A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,11 +68,12 @@
 				52F8AB91252D63B90016973A /* AppDelegate.swift */,
 				52F8AB93252D63B90016973A /* SceneDelegate.swift */,
 				52F8AB95252D63B90016973A /* ViewController.swift */,
+				52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */,
+				52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */,
 				52F8AB97252D63B90016973A /* Main.storyboard */,
 				52F8AB9A252D63BE0016973A /* Assets.xcassets */,
 				52F8AB9C252D63BE0016973A /* LaunchScreen.storyboard */,
 				52F8AB9F252D63BE0016973A /* Info.plist */,
-				52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */,
 			);
 			path = EvPermanente2;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				52E246502533C10C00EDD2EA /* RegistrarUsuarioViewController.swift in Sources */,
 				52F8AB92252D63B90016973A /* AppDelegate.swift in Sources */,
 				52F8AB94252D63B90016973A /* SceneDelegate.swift in Sources */,
+				52E246532533D5C600EDD2EA /* RestablecerContrasenaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
