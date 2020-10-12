@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     @IBOutlet weak var constraintCenterYContent: NSLayoutConstraint!
     
     @IBOutlet weak var viewContent: UIView!
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         var delta: CGFloat = 0
         
         if originkeyboardY < finalPosyContent {
-            delta = originkeyboardY - finalPosyContent + 290
+            delta = originkeyboardY - finalPosyContent - 40
         }
 
         UIView.animate(withDuration: animationDuration) {
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: animationDuration) {
             
-            self.constraintCenterYContent.constant = 320
+            self.constraintCenterYContent.constant = 0
             self.view.layoutIfNeeded()
         }
         
