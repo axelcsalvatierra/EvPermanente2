@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrarUsuarioViewController: UIViewController {
+class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate ,UIPickerViewDataSource {
 
     
     @IBOutlet weak var txtEmail: UITextField!
@@ -15,8 +15,70 @@ class RegistrarUsuarioViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtNombre: UITextField!
     @IBOutlet weak var txtApellido: UITextField!
+    @IBOutlet weak var txtSede: UITextField!
+    @IBOutlet weak var txtCarreras: UITextField!
     @IBOutlet weak var validacionMensaje: UILabel!
     
+    /*let carreras = ["Área de Tecnología", "Área de Comunicación", "Área de Marketing", "Área de Negocios", "Área de Hotelería y Turismo"]*/
+    
+    let sedes = ["Miraflores", "Jesus María", "San Isidro", "La Molina"]
+    
+    var pickerView = UIPickerView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        txtNombre.delegate = self
+        txtApellido.delegate = self
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        txtSede.inputView = pickerView
+        txtSede.textAlignment = .left
+        
+        /*txtCarreras.inputView = pickerView
+        txtCarreras.textAlignment = .left*/
+        
+    }
+    
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sedes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return sedes[row]
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        txtSede.text = sedes[row]
+        txtSede.resignFirstResponder()
+        
+        /*txtCarreras.text = carreras[row]
+        txtCarreras.resignFirstResponder()*/
+
+    }
+    
+
+
+    
+    
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                let caracterPermitidoSet = CharacterSet(charactersIn: caracteresPermitidos)
+                let typedCharcterSet = CharacterSet(charactersIn: string)
+                return caracterPermitidoSet.isSuperset(of: typedCharcterSet)
+    }
+    //"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     
     
     @IBAction func btnCrearCuenta(_ sender: Any) {
@@ -41,25 +103,18 @@ class RegistrarUsuarioViewController: UIViewController {
                 }
         
         guard let nombre = txtNombre.text, txtNombre.text?.count != 0 else {
+            
                     validacionMensaje.isHidden = false
                     validacionMensaje.text = "Ingresa tu nombre"
                     return
                 }
+        
         
         guard let apellido = txtApellido.text, txtApellido.text?.count != 0  else {
                     validacionMensaje.isHidden = false
                     validacionMensaje.text = "Ingresa tu apellido"
                     return
                 }
-        
-        /*func isValidNombre() {
-            
-            var validacion = validacionMensaje
-            let nombre = txtNombre
-            if (nombre?.text?.count ?? 0 >= 15){
-                validacion = ""
-                
-            }*/
             
     }
     
@@ -68,6 +123,8 @@ class RegistrarUsuarioViewController: UIViewController {
             let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return emailTest.evaluate(with: emailID)
         }
+    
+    
     
     
     
