@@ -1,17 +1,14 @@
 //
-//  ViewController.swift
+//  RegistrarUsuarioViewController.swift
 //  EvPermanente2
 //
-//  Created by Axel Salvatierra on 10/6/20.
+//  Created by Axel Salvatierra on 10/11/20.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var constraintCenterYContent: NSLayoutConstraint!
-    
-    @IBOutlet weak var viewContent: UIView!
+class RegistrarUsuarioViewController: UIViewController {
+
     
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
     
@@ -38,18 +35,10 @@ class ViewController: UIViewController {
         
         let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero
         let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0
-        
-        let finalPosyContent = self.viewContent.frame.origin.y + self.viewContent.frame.height
-        let originkeyboardY = keyboardFrame.origin.y
-        var delta: CGFloat = 0
-        
-        if originkeyboardY < finalPosyContent {
-            delta = originkeyboardY - finalPosyContent + 290
-        }
 
         UIView.animate(withDuration: animationDuration) {
             
-            self.constraintCenterYContent.constant = delta
+            self.constraintBottomScroll.constant = keyboardFrame.size.height
             self.view.layoutIfNeeded()
         }
     }
@@ -60,12 +49,12 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: animationDuration) {
             
-            self.constraintCenterYContent.constant = 320
+            self.constraintBottomScroll.constant = 0
             self.view.layoutIfNeeded()
         }
         
     }
+    
 
 
 }
-
