@@ -10,6 +10,42 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var validacionMensaje: UILabel!
+    
+    
+    @IBAction func btnIngresar(_ sender: Any) {
+        
+        validacionMensaje.isHidden = true
+        
+        guard let email = txtEmail.text, txtEmail.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu email"
+                    return
+                }
+        
+        if isValidEmail(emailID: email) == false {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Por favor ingresa un email válido"
+                }
+        
+        guard let password = txtPassword.text, txtPassword.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu contraseña"
+                    return
+                }
+    }
+    
+    func isValidEmail(emailID:String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluate(with: emailID)
+        }
+    
+    //ANIMACION DE PANTALLA Y TECLADO
+    
     @IBOutlet weak var constraintCenterYContent: NSLayoutConstraint!
     
     @IBOutlet weak var viewContent: UIView!
