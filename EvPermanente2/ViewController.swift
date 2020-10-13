@@ -57,10 +57,11 @@ class ViewController: UIViewController {
     
     //ANIMACION DE PANTALLA Y TECLADO
     
+
+    
     @IBOutlet weak var constraintCenterYContent: NSLayoutConstraint!
     
     @IBOutlet weak var viewContent: UIView!
-    
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
     
     @IBAction func clickClosekeyboard(_ sender: Any) {
@@ -92,7 +93,7 @@ class ViewController: UIViewController {
         var delta: CGFloat = 0
         
         if originkeyboardY < finalPosyContent {
-            delta = originkeyboardY - finalPosyContent - 40
+            delta = originkeyboardY - finalPosyContent - 130
         }
 
         UIView.animate(withDuration: animationDuration) {

@@ -10,7 +10,7 @@ import UIKit
 class RestablecerContrasenaViewController: UIViewController {
 
     
-    
+    //VARIABLES DE RANDOM CAPTCHA
     var alphas : [String] = []
     var captchaString = ""
     var i1 : Int = 0
@@ -28,14 +28,35 @@ class RestablecerContrasenaViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        //GENERAR RANDOM CAPTCHA
         alphas = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                    "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s","t", "u", "v", "w", "x", "y", "z", "A", "B", "C",
                    "D", "E", "F", "G", "H", "I", "J", "K", "L", "M","N", "ñ", "O", "P", "Q", "R", "S", "T", "U", "V",
                    "W", "X", "Y", "Z"]
+        
+        
+        //LIMPIAR LABEL
+        txtEmail.clearButtonMode = .always
+        txtEmail.clearButtonMode = .whileEditing
+        captchaText.clearButtonMode = .always
+        captchaText.clearButtonMode = .whileEditing
+        
+        
+        self.updateBorderSelect(false, toTextField: self.txtEmail)
+        self.updateBorderSelect(false, toTextField: self.captchaText)
+    }
+    
+    //CAMBIAR COLOR DE BORDES DE TEXTFIELD
+    
+    func updateBorderSelect(_ isSelect: Bool, toTextField textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = isSelect ? UIColor(displayP3Red: 0.5, green: 0.7, blue: 1, alpha: 1).cgColor : UIColor.lightGray.cgColor
     }
     
     
-    //HACER FUNCIONAR EL CAPTCHA CORRECTO O INCORRECTO
+    
+    
+    //HACER FUNCIONAR EL CAPTCHA CORRECTO O INCORRECTO CON EL EMAIL
     func actualizarCaptcha(){
         i1 = Int(arc4random()) % alphas.count
         i2 = Int(arc4random()) % alphas.count
@@ -59,7 +80,7 @@ class RestablecerContrasenaViewController: UIViewController {
             estadoLabel.text = "Captcha Correcto"
             estadoLabel.textColor = .green
         }else{
-            estadoLabel.text = "Por favor completa el captcha"
+            estadoLabel.text = "El captcha es incorrecto"
             estadoLabel.textColor = .red
             
         }
@@ -89,16 +110,6 @@ class RestablecerContrasenaViewController: UIViewController {
             validacionMensaje.text = "Revisa tu bandeja de entrada"
         }
     }
-    
-    
-    /*func inputCorrectos (){
-        if (validacionMensaje.isHidden == true){
-            validacionMensaje.isHidden = false
-            validacionMensaje.textColor = .green
-            validacionMensaje.text = "LOGIN CON ÉXITO"
-        }
-        
-    }*/
     
     
     func isValidEmail(emailID:String) -> Bool {
@@ -170,4 +181,19 @@ class RestablecerContrasenaViewController: UIViewController {
     }
     
 
+}
+
+extension RestablecerContrasenaViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.updateBorderSelect(true, toTextField: textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        self.updateBorderSelect(false, toTextField: textField)
+        
+    }
+    
 }

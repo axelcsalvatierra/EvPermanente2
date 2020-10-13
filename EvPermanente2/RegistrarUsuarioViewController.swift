@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate ,UIPickerViewDataSource {
+class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UIPickerViewDataSource {
 
     
     @IBOutlet weak var txtEmail: UITextField!
@@ -31,9 +31,24 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //CAMBIAR COLOR DE BORDES DE TEXTFIELD
+        self.updateBorderSelect(false, toTextField: self.txtEmail)
+        self.updateBorderSelect(false, toTextField: self.txtNombre)
+        self.updateBorderSelect(false, toTextField: self.txtApellido)
+        self.updateBorderSelect(false, toTextField: self.txtSede)
+        self.updateBorderSelect(false, toTextField: self.txtPassword)
+        self.updateBorderSelect(false, toTextField: self.txtCarreras)
+        self.updateBorderSelect(false, toTextField: self.fechaNacimiento)
+        
+        
         txtNombre.delegate = self
         txtApellido.delegate = self
         txtCarreras.delegate = self
+        txtSede.delegate = self
+        fechaNacimiento.delegate = self
+        
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -43,10 +58,38 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
         
         setUpDatePicker()
         
-        /*txtCarreras.inputView = pickerView
-        txtCarreras.textAlignment = .left*/
+        
+        //LIMPIAR LABEL
+        txtEmail.clearButtonMode = .always
+        txtEmail.clearButtonMode = .whileEditing
+        
+        txtPassword.clearButtonMode = .always
+        txtPassword.clearButtonMode = .whileEditing
+        
+        txtNombre.clearButtonMode = .always
+        txtNombre.clearButtonMode = .whileEditing
+        
+        txtApellido.clearButtonMode = .always
+        txtApellido.clearButtonMode = .whileEditing
+        
+        txtSede.clearButtonMode = .always
+        txtSede.clearButtonMode = .whileEditing
+        
+        txtCarreras.clearButtonMode = .always
+        txtCarreras.clearButtonMode = .whileEditing
+        
+        
+
         
     }
+    
+    //CAMBIAR COLOR DE BORDES DE TEXTFIELD
+    
+    func updateBorderSelect(_ isSelect: Bool, toTextField textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = isSelect ? UIColor(displayP3Red: 0.5, green: 0.7, blue: 1, alpha: 1).cgColor : UIColor.lightGray.cgColor
+    }
+    
     
     //INPUT DE SEDES
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -67,8 +110,6 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
         txtSede.text = sedes[row]
         txtSede.resignFirstResponder()
         
-        /*txtCarreras.text = carreras[row]
-        txtCarreras.resignFirstResponder()*/
 
     }
     
@@ -253,4 +294,18 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
     
 
 
+}
+
+extension RegistrarUsuarioViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.updateBorderSelect(true, toTextField: textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        self.updateBorderSelect(false, toTextField: textField)
+        
+    }
 }
