@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         var delta: CGFloat = 0
         
         if originkeyboardY < finalPosyContent {
-            delta = originkeyboardY - finalPosyContent - 130
+            delta = originkeyboardY - finalPosyContent - 75
         }
 
         UIView.animate(withDuration: animationDuration) {
