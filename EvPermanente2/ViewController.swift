@@ -36,6 +36,17 @@ class ViewController: UIViewController {
                     validacionMensaje.text = "Ingresa tu contraseña"
                     return
                 }
+        
+        inputCorrectos()
+    }
+    
+    func inputCorrectos (){
+        if (validacionMensaje.isHidden == true){
+            validacionMensaje.isHidden = false
+            validacionMensaje.textColor = .green
+            validacionMensaje.text = "LOGIN CON ÉXITO"
+        }
+        
     }
     
     func isValidEmail(emailID:String) -> Bool {

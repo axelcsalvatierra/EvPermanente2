@@ -9,6 +9,108 @@ import UIKit
 
 class RestablecerContrasenaViewController: UIViewController {
 
+    
+    
+    var alphas : [String] = []
+    var captchaString = ""
+    var i1 : Int = 0
+    var i2 : Int = 0
+    var i3 : Int = 0
+    var i4 : Int = 0
+    var i5 : Int = 0
+    
+    @IBOutlet weak var captchaLabel: UILabel!
+    @IBOutlet weak var captchaText: UITextField!
+    @IBOutlet weak var estadoLabel: UILabel!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var validacionMensaje: UILabel!
+    
+    
+    override func viewDidLoad() {
+        
+        alphas = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+                   "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s","t", "u", "v", "w", "x", "y", "z", "A", "B", "C",
+                   "D", "E", "F", "G", "H", "I", "J", "K", "L", "M","N", "ñ", "O", "P", "Q", "R", "S", "T", "U", "V",
+                   "W", "X", "Y", "Z"]
+    }
+    
+    
+    //HACER FUNCIONAR EL CAPTCHA CORRECTO O INCORRECTO
+    func actualizarCaptcha(){
+        i1 = Int(arc4random()) % alphas.count
+        i2 = Int(arc4random()) % alphas.count
+        i3 = Int(arc4random()) % alphas.count
+        i4 = Int(arc4random()) % alphas.count
+        i5 = Int(arc4random()) % alphas.count
+        
+        captchaString = "\(alphas[i1])\(alphas[i2])\(alphas[i3])\(alphas[i4])\(alphas[i5])"
+        print(captchaString)
+        captchaLabel.text=captchaString
+        
+    }
+    
+    @IBAction func actualizarBoton(_ sender: UIButton) {
+        actualizarCaptcha()
+    }
+    
+    @IBAction func btnRestablecer(_ sender: Any) {
+        
+        if captchaLabel.text == captchaText.text{
+            estadoLabel.text = "Captcha Correcto"
+            estadoLabel.textColor = .green
+        }else{
+            estadoLabel.text = "Por favor completa el captcha"
+            estadoLabel.textColor = .red
+            
+        }
+        
+        
+        validacionMensaje.isHidden = true
+        
+        guard let email = txtEmail.text, txtEmail.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu email"
+                    return
+                }
+        
+        if isValidEmail(emailID: email) == false {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Por favor ingresa un email válido"
+                }
+        
+        
+        inputCorrectos()
+    }
+    
+    func inputCorrectos() {
+        if (validacionMensaje.isHidden == true && captchaLabel.text == captchaText.text ){
+            validacionMensaje.isHidden = false
+            validacionMensaje.textColor = .green
+            validacionMensaje.text = "Revisa tu bandeja de entrada"
+        }
+    }
+    
+    
+    /*func inputCorrectos (){
+        if (validacionMensaje.isHidden == true){
+            validacionMensaje.isHidden = false
+            validacionMensaje.textColor = .green
+            validacionMensaje.text = "LOGIN CON ÉXITO"
+        }
+        
+    }*/
+    
+    
+    func isValidEmail(emailID:String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluate(with: emailID)
+        }
+    
+    
+    
+    
+    //COMPORTAMIENTO DEL TECLADO Y ANIMACION
     @IBOutlet weak var constraintCenterYContent: NSLayoutConstraint!
     
     @IBOutlet weak var viewContent: UIView!
@@ -19,6 +121,9 @@ class RestablecerContrasenaViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        actualizarCaptcha()
+        
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)

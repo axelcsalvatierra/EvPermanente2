@@ -18,17 +18,22 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
     @IBOutlet weak var txtSede: UITextField!
     @IBOutlet weak var txtCarreras: UITextField!
     @IBOutlet weak var validacionMensaje: UILabel!
+    @IBOutlet weak var fechaNacimiento: UITextField!
+    
     
     /*let carreras = ["Área de Tecnología", "Área de Comunicación", "Área de Marketing", "Área de Negocios", "Área de Hotelería y Turismo"]*/
     
     let sedes = ["Miraflores", "Jesus María", "San Isidro", "La Molina"]
     
     var pickerView = UIPickerView()
+    
+    var datePicker: UIDatePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         txtNombre.delegate = self
         txtApellido.delegate = self
+        txtCarreras.delegate = self
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -36,12 +41,14 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
         txtSede.inputView = pickerView
         txtSede.textAlignment = .left
         
+        setUpDatePicker()
+        
         /*txtCarreras.inputView = pickerView
         txtCarreras.textAlignment = .left*/
         
     }
     
-    
+    //INPUT DE SEDES
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -66,14 +73,52 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
     }
     
 
-
+    //CALENDARIO
+    func setUpDatePicker () {
+        
+        self.datePicker = UIDatePicker.init(frame: CGRect (x: 0, y: 0, width: self.view.bounds.width, height: 200))
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
+        
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        self.fechaNacimiento.inputView = datePicker
+        
+        let toolBar:UIToolbar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
+        
+        let spaceButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.tapOnDoneButton))
+        
+        toolBar.setItems([spaceButton, doneButton], animated: true)
+        
+        self.fechaNacimiento.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func dateChanged() {
+        
+        let formatoFecha = DateFormatter()
+        formatoFecha.dateStyle = .medium
+        
+        self.fechaNacimiento.text = formatoFecha.string(from: datePicker.date)
+        
+    }
+    
+    @objc func tapOnDoneButton(){
+        
+        fechaNacimiento.resignFirstResponder()
+        
+    }
     
     
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                let caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
                 let caracterPermitidoSet = CharacterSet(charactersIn: caracteresPermitidos)
                 let typedCharcterSet = CharacterSet(charactersIn: string)
                 return caracterPermitidoSet.isSuperset(of: typedCharcterSet)
@@ -96,13 +141,13 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
                     validacionMensaje.text = "Por favor ingresa un email válido"
                 }
         
-        guard let password = txtPassword.text, txtPassword.text?.count != 0  else {
+        guard let _ = txtPassword.text, txtPassword.text?.count != 0  else {
                     validacionMensaje.isHidden = false
                     validacionMensaje.text = "Crea una contraseña"
                     return
                 }
         
-        guard let nombre = txtNombre.text, txtNombre.text?.count != 0 else {
+        guard let _ = txtNombre.text, txtNombre.text?.count != 0 else {
             
                     validacionMensaje.isHidden = false
                     validacionMensaje.text = "Ingresa tu nombre"
@@ -110,12 +155,41 @@ class RegistrarUsuarioViewController: UIViewController, UITextFieldDelegate, UIP
                 }
         
         
-        guard let apellido = txtApellido.text, txtApellido.text?.count != 0  else {
+        guard let _ = txtApellido.text, txtApellido.text?.count != 0  else {
                     validacionMensaje.isHidden = false
                     validacionMensaje.text = "Ingresa tu apellido"
                     return
                 }
+        
+        guard let _ = txtSede.text, txtSede.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu sede"
+                    return
+                }
+        
+        guard let _ = txtCarreras.text, txtCarreras.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu carrera"
+                    return
+                }
+        
+        guard let _ = fechaNacimiento.text, fechaNacimiento.text?.count != 0  else {
+                    validacionMensaje.isHidden = false
+                    validacionMensaje.text = "Ingresa tu fecha de nacimiento"
+                    return
+                }
+        
+        inputCorrectos()
             
+    }
+    
+    func inputCorrectos (){
+        if (validacionMensaje.isHidden == true){
+            validacionMensaje.isHidden = false
+            validacionMensaje.textColor = .green
+            validacionMensaje.text = "CREACIÓN DE CUENTA EXITOSA, BIENVENIDO :D"
+        }
+        
     }
     
     func isValidEmail(emailID:String) -> Bool {
