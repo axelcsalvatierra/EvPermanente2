@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RestablecerContrasenaViewController: UIViewController {
 
@@ -76,6 +77,39 @@ class RestablecerContrasenaViewController: UIViewController {
     
     @IBAction func btnRestablecer(_ sender: Any) {
         
+        let error = validacionLabels()
+        
+        if error != nil {
+            
+            mostrarError(error!)
+        }else {
+            
+            let email=txtEmail.text!
+            
+            //RECUPERAR CONTRASEñA
+            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                if error != nil {
+                    
+                    self.validacionMensaje.text = "Ingresa un email válido"
+                }else {
+                    self.validacionMensaje.isHidden=true
+                    self.inputCorrectos()
+                }
+                
+            }
+        }
+        
+        
+    }
+    
+    func mostrarError(_ mensaje:String){
+        
+        validacionMensaje.text = mensaje
+        
+    }
+    
+    func validacionLabels()->String? {
+        
         if captchaLabel.text == captchaText.text{
             estadoLabel.text = "Captcha Correcto"
             estadoLabel.textColor = .green
@@ -85,29 +119,27 @@ class RestablecerContrasenaViewController: UIViewController {
             
         }
         
-        
-        validacionMensaje.isHidden = true
+        //validacionMensaje.isHidden = true
         
         guard let email = txtEmail.text, txtEmail.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu email"
-                    return
+                    
+                    return "Ingresa tu email"
                 }
         
-        if isValidEmail(emailID: email) == false {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Por favor ingresa un email válido"
+        if isValidEmail(emailID: email) == false{
+        
+                    return "Por favor ingresa un email válido"
                 }
         
         
-        inputCorrectos()
+        
+        return nil
     }
     
+    
     func inputCorrectos() {
-        if (validacionMensaje.isHidden == true && captchaLabel.text == captchaText.text ){
-            validacionMensaje.isHidden = false
-            validacionMensaje.textColor = .green
-            validacionMensaje.text = "Revisa tu bandeja de entrada"
+        if (validacionMensaje.isHidden==true && captchaLabel.text == captchaText.text ){
+            showAlert()
         }
     }
     
@@ -117,6 +149,17 @@ class RestablecerContrasenaViewController: UIViewController {
             let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return emailTest.evaluate(with: emailID)
         }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "Link Enviado", message: "Revisa tu bandeja de entrada para cambiar tu contraseña", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cerrar", style: .cancel, handler: { action in
+            
+        }))
+        
+        present(alert, animated: true)
+    
+    }
     
     
     

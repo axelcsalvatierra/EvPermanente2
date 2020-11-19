@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UIPickerViewDataSource {
 
@@ -121,7 +123,7 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
         
-        if #available(iOS 13.4, *) {
+        if #available(iOS 14, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
         
@@ -133,6 +135,7 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
         
         let doneButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.tapOnDoneButton))
         
+        
         toolBar.setItems([spaceButton, doneButton], animated: true)
         
         self.fechaNacimiento.inputAccessoryView = toolBar
@@ -143,6 +146,7 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
         
         let formatoFecha = DateFormatter()
         formatoFecha.dateStyle = .medium
+        formatoFecha.locale = Locale (identifier: "es_PE")
         
         self.fechaNacimiento.text = formatoFecha.string(from: datePicker.date)
         
@@ -169,69 +173,114 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
     
     @IBAction func btnCrearCuenta(_ sender: Any) {
         
-        validacionMensaje.isHidden = true
+        let error = validacionLabels()
+        
+        if error != nil {
+            mostrarError(error!)
+            
+        }else {
+            
+            let email = txtEmail.text!
+            let password = txtPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let nombre = txtNombre.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let apellido = txtApellido.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let sede = txtSede.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let carreras = txtCarreras.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let nacimiento = fechaNacimiento.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            //CREAR EL USUARIO
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                    if error != nil {
+                        
+                        self.mostrarError("Error al crear usuario")
+                        
+                    }else {
+                        let db = Firestore.firestore()
+                        
+                        db.collection("alumnos").addDocument(data: ["nombre": nombre, "apellido": apellido, "sede": sede, "carrera": carreras, "nacimiento": nacimiento, "uid": result!.user.uid]) { (error) in
+                            
+                            if error != nil {
+                                
+                                self.mostrarError("Error cargando datos de usuario")
+                            }
+                        }
+                        
+                        self.validacionMensaje.textColor = .green
+                        self.validacionMensaje.text = "CREACIÓN DE CUENTA EXITOSA, BIENVENIDO :D"
+                    }
+                }
+        }
+}
+    
+    func mostrarError(_ mensaje:String){
+        
+        validacionMensaje.text = mensaje
+        
+    }
+    
+    func validacionLabels() -> String?{
+        
+        //validacionMensaje.isHidden = true
         
         guard let email = txtEmail.text, txtEmail.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu email"
-                    return
+                    //validacionMensaje.isHidden = false
+                    //validacionMensaje.text = "Ingresa tu email"
+                    return "Ingresa tu email"
                 }
         
         if isValidEmail(emailID: email) == false {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Por favor ingresa un email válido"
+
+                    return "Por favor ingresa un email válido"
                 }
         
-        guard let _ = txtPassword.text, txtPassword.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Crea una contraseña"
-                    return
+        guard let password = txtPassword.text, txtPassword.text?.count != 0  else {
+
+                    return "Crea una contraseña"
                 }
+        
+        if isValidPassword(passwordID: password) == false {
+            
+            return "Verifica que tu contraseña contenga un carácter especial, un número y almenos 5 caracteres"
+        }
         
         guard let _ = txtNombre.text, txtNombre.text?.count != 0 else {
             
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu nombre"
-                    return
+                    return "Ingresa tu nombre"
                 }
         
         
         guard let _ = txtApellido.text, txtApellido.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu apellido"
-                    return
+
+                    return "Ingresa tu apellido"
                 }
         
         guard let _ = txtSede.text, txtSede.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu sede"
-                    return
+
+                    return "Ingresa tu sede"
                 }
         
         guard let _ = txtCarreras.text, txtCarreras.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu carrera"
-                    return
+
+                    return "Ingresa tu carrera"
                 }
         
         guard let _ = fechaNacimiento.text, fechaNacimiento.text?.count != 0  else {
-                    validacionMensaje.isHidden = false
-                    validacionMensaje.text = "Ingresa tu fecha de nacimiento"
-                    return
-                }
-        
-        inputCorrectos()
+
+                    return "Ingresa tu fecha de nacimiento"
             
+                }
+        return nil
+        
     }
     
-    func inputCorrectos (){
+    /*func inputCorrectos (){
         if (validacionMensaje.isHidden == true){
             validacionMensaje.isHidden = false
             validacionMensaje.textColor = .green
             validacionMensaje.text = "CREACIÓN DE CUENTA EXITOSA, BIENVENIDO :D"
         }
         
-    }
+    }*/
     
     func isValidEmail(emailID:String) -> Bool {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -239,9 +288,10 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
             return emailTest.evaluate(with: emailID)
         }
     
-    
-    
-    
+    func isValidPassword(passwordID:String) -> Bool {
+        let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{5,}$")
+        return password.evaluate(with: passwordID)
+    }
     
     
     

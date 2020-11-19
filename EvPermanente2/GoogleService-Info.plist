@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>725180138530-0b2voqv619e0kue8s65acb6envfr0kar.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.725180138530-0b2voqv619e0kue8s65acb6envfr0kar</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDt_jqfOFGiTNkGG-rN0VSEKd9Qllvs0gg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>725180138530</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.isil.EvPermanente2</string>
+	<key>PROJECT_ID</key>
+	<string>fir-appios-2020</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-appios-2020.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:725180138530:ios:b8b90d66c3d3528aa0367b</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-appios-2020.firebaseio.com</string>
+</dict>
+</plist>
