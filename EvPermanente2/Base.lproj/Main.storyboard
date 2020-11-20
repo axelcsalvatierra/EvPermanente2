@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKr-7Z-Nae">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qeN-uM-64e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -777,20 +777,67 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-yp-mwh">
+                                <rect key="frame" x="61" y="44" width="277" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yVZ-z7-gIV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJE-a0-pmu">
+                                <rect key="frame" x="18" y="47" width="43" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Dbg-cq-y16"/>
+                                    <constraint firstAttribute="width" constant="43" id="GAN-gR-LAF"/>
+                                </constraints>
+                                <state key="normal" image="Logocortado.png"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo ISIL.png" translatesAutoresizingMaskIntoConstraints="NO" id="Erw-fc-OaG">
+                                <rect key="frame" x="345" y="50" width="58" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="YuN-Jd-nZc"/>
+                                    <constraint firstAttribute="width" constant="58" id="gW7-Pw-0w7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsM-qv-qEL">
+                                <rect key="frame" x="139" y="120" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Realizar Publicación"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Publicaciones de la comunidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-No-AOA">
+                                <rect key="frame" x="18" y="165" width="385" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AhM-rv-a0j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GNa-yp-mwh" firstAttribute="leading" secondItem="oJE-a0-pmu" secondAttribute="trailing" id="4Vt-9y-CqM"/>
+                            <constraint firstItem="GNa-yp-mwh" firstAttribute="top" secondItem="AhM-rv-a0j" secondAttribute="top" id="5BH-56-a41"/>
+                            <constraint firstItem="Erw-fc-OaG" firstAttribute="leading" secondItem="GNa-yp-mwh" secondAttribute="trailing" constant="7" id="92y-Og-XHX"/>
+                            <constraint firstItem="Erw-fc-OaG" firstAttribute="top" secondItem="AhM-rv-a0j" secondAttribute="top" constant="6" id="S2c-sY-fqv"/>
+                            <constraint firstItem="oJE-a0-pmu" firstAttribute="top" secondItem="AhM-rv-a0j" secondAttribute="top" constant="3" id="bdv-Aq-AJh"/>
+                            <constraint firstItem="oJE-a0-pmu" firstAttribute="leading" secondItem="AhM-rv-a0j" secondAttribute="leading" constant="18" id="mXp-gh-Q7d"/>
+                            <constraint firstItem="GNa-yp-mwh" firstAttribute="leading" secondItem="oJE-a0-pmu" secondAttribute="trailing" id="scW-Kr-wq6"/>
+                            <constraint firstItem="AhM-rv-a0j" firstAttribute="trailing" secondItem="Erw-fc-OaG" secondAttribute="trailing" constant="11" id="uJl-xK-d3X"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inicio" image="house.fill" catalog="system" id="iTA-C3-84k"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e7-oc-ilg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2065" y="1486"/>
+            <point key="canvasLocation" x="-2065.217391304348" y="1485.9375"/>
         </scene>
     </scenes>
     <resources>
         <image name="ISIL Aprende Haciendo.png" width="181.5" height="67.5"/>
         <image name="Logo ISIL.png" width="367" height="209"/>
+        <image name="Logocortado.png" width="183.75" height="176.25"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -799,6 +846,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

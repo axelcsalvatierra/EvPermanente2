@@ -207,10 +207,25 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
                         
                         self.validacionMensaje.textColor = .green
                         self.validacionMensaje.text = "CREACIÓN DE CUENTA EXITOSA, BIENVENIDO :D"
+                        
+                        
                     }
+                        self.borrarLabels()
                 }
         }
+                        
 }
+    
+    func borrarLabels(){
+        
+        txtEmail.text=nil
+        txtPassword.text=nil
+        txtNombre.text=nil
+        txtApellido.text=nil
+        txtSede.text=nil
+        txtCarreras.text=nil
+        fechaNacimiento.text=nil
+    }
     
     func mostrarError(_ mensaje:String){
         
