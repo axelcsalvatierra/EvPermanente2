@@ -11,6 +11,8 @@
 		520B248925676FDF00E5FC55 /* Logocortado.png in Resources */ = {isa = PBXBuildFile; fileRef = 520B248825676FDE00E5FC55 /* Logocortado.png */; };
 		521171C7256439C000069A0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521171C6256439C000069A0A /* GoogleService-Info.plist */; };
 		524B55FC256599A0007D687F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B55FB256599A0007D687F /* HomeViewController.swift */; };
+		5284B7ED25776F3C0063E1F0 /* ISIL Aprende Haciendo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5284B7EB25776F3B0063E1F0 /* ISIL Aprende Haciendo.png */; };
+		5284B7EE25776F3C0063E1F0 /* Logo ISIL.png in Resources */ = {isa = PBXBuildFile; fileRef = 5284B7EC25776F3C0063E1F0 /* Logo ISIL.png */; };
 		52E246502533C10C00EDD2EA /* RegistrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */; };
 		52E246532533D5C600EDD2EA /* RestablecerContrasenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */; };
 		52F8AB92252D63B90016973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB91252D63B90016973A /* AppDelegate.swift */; };
@@ -19,8 +21,6 @@
 		52F8AB99252D63B90016973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F8AB97252D63B90016973A /* Main.storyboard */; };
 		52F8AB9B252D63BE0016973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F8AB9A252D63BE0016973A /* Assets.xcassets */; };
 		52F8AB9E252D63BE0016973A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F8AB9C252D63BE0016973A /* LaunchScreen.storyboard */; };
-		52F8ABAE252D6F550016973A /* Logo ISIL.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F8ABAC252D6F540016973A /* Logo ISIL.png */; };
-		52F8ABAF252D6F550016973A /* ISIL Aprende Haciendo.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F8ABAD252D6F540016973A /* ISIL Aprende Haciendo.png */; };
 		AE1916CB7FF48C89E8CEB878 /* Pods_EvPermanente2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE3D49A852EBFC92CC7AF6D /* Pods_EvPermanente2.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +31,8 @@
 		520B248825676FDE00E5FC55 /* Logocortado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logocortado.png; sourceTree = "<group>"; };
 		521171C6256439C000069A0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		524B55FB256599A0007D687F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5284B7EB25776F3B0063E1F0 /* ISIL Aprende Haciendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISIL Aprende Haciendo.png"; sourceTree = "<group>"; };
+		5284B7EC25776F3C0063E1F0 /* Logo ISIL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo ISIL.png"; sourceTree = "<group>"; };
 		52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioViewController.swift; sourceTree = "<group>"; };
 		52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestablecerContrasenaViewController.swift; sourceTree = "<group>"; };
 		52F8AB8E252D63B90016973A /* EvPermanente2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvPermanente2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,8 +43,6 @@
 		52F8AB9A252D63BE0016973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F8AB9D252D63BE0016973A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F8AB9F252D63BE0016973A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52F8ABAC252D6F540016973A /* Logo ISIL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo ISIL.png"; path = "../../../../Logo ISIL.png"; sourceTree = "<group>"; };
-		52F8ABAD252D6F540016973A /* ISIL Aprende Haciendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ISIL Aprende Haciendo.png"; path = "../../../../ISIL Aprende Haciendo.png"; sourceTree = "<group>"; };
 		F7FBD2308B9DB7B7AD12C251 /* Pods-EvPermanente2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvPermanente2.release.xcconfig"; path = "Target Support Files/Pods-EvPermanente2/Pods-EvPermanente2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,9 +108,9 @@
 		52F8ABA7252D6DFF0016973A /* FOTOS */ = {
 			isa = PBXGroup;
 			children = (
+				5284B7EB25776F3B0063E1F0 /* ISIL Aprende Haciendo.png */,
+				5284B7EC25776F3C0063E1F0 /* Logo ISIL.png */,
 				520B248825676FDE00E5FC55 /* Logocortado.png */,
-				52F8ABAD252D6F540016973A /* ISIL Aprende Haciendo.png */,
-				52F8ABAC252D6F540016973A /* Logo ISIL.png */,
 			);
 			path = FOTOS;
 			sourceTree = "<group>";
@@ -184,11 +184,11 @@
 			files = (
 				520B248925676FDF00E5FC55 /* Logocortado.png in Resources */,
 				52F8AB9E252D63BE0016973A /* LaunchScreen.storyboard in Resources */,
+				5284B7EE25776F3C0063E1F0 /* Logo ISIL.png in Resources */,
 				52F8AB9B252D63BE0016973A /* Assets.xcassets in Resources */,
-				52F8ABAE252D6F550016973A /* Logo ISIL.png in Resources */,
 				52F8AB99252D63B90016973A /* Main.storyboard in Resources */,
-				52F8ABAF252D6F550016973A /* ISIL Aprende Haciendo.png in Resources */,
 				521171C7256439C000069A0A /* GoogleService-Info.plist in Resources */,
+				5284B7ED25776F3C0063E1F0 /* ISIL Aprende Haciendo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
