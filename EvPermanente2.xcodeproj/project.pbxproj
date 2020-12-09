@@ -17,8 +17,12 @@
 		52541482257802CB006E1570 /* Publicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52541481257802CB006E1570 /* Publicaciones.swift */; };
 		5284B7ED25776F3C0063E1F0 /* ISIL Aprende Haciendo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5284B7EB25776F3B0063E1F0 /* ISIL Aprende Haciendo.png */; };
 		5284B7EE25776F3C0063E1F0 /* Logo ISIL.png in Resources */ = {isa = PBXBuildFile; fileRef = 5284B7EC25776F3C0063E1F0 /* Logo ISIL.png */; };
+		52DAD61C258140E600F4447E /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAD61B258140E500F4447E /* PerfilViewController.swift */; };
 		52E246502533C10C00EDD2EA /* RegistrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */; };
 		52E246532533D5C600EDD2EA /* RestablecerContrasenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */; };
+		52F209CD257F2E7700581F3C /* SiguiendoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F209CC257F2E7700581F3C /* SiguiendoViewController.swift */; };
+		52F209D0257F2E8900581F3C /* SiguiendoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F209CF257F2E8900581F3C /* SiguiendoViewCell.swift */; };
+		52F209D3257F2E9900581F3C /* Siguiendo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F209D2257F2E9900581F3C /* Siguiendo.swift */; };
 		52F561812579CCD700A2D028 /* HacerPublicaciónViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F561802579CCD700A2D028 /* HacerPublicaciónViewController.swift */; };
 		52F8AB92252D63B90016973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB91252D63B90016973A /* AppDelegate.swift */; };
 		52F8AB94252D63B90016973A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8AB93252D63B90016973A /* SceneDelegate.swift */; };
@@ -42,8 +46,12 @@
 		52541481257802CB006E1570 /* Publicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publicaciones.swift; sourceTree = "<group>"; };
 		5284B7EB25776F3B0063E1F0 /* ISIL Aprende Haciendo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISIL Aprende Haciendo.png"; sourceTree = "<group>"; };
 		5284B7EC25776F3C0063E1F0 /* Logo ISIL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo ISIL.png"; sourceTree = "<group>"; };
+		52DAD61B258140E500F4447E /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		52E2464F2533C10C00EDD2EA /* RegistrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarUsuarioViewController.swift; sourceTree = "<group>"; };
 		52E246522533D5C600EDD2EA /* RestablecerContrasenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestablecerContrasenaViewController.swift; sourceTree = "<group>"; };
+		52F209CC257F2E7700581F3C /* SiguiendoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiguiendoViewController.swift; sourceTree = "<group>"; };
+		52F209CF257F2E8900581F3C /* SiguiendoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiguiendoViewCell.swift; sourceTree = "<group>"; };
+		52F209D2257F2E9900581F3C /* Siguiendo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Siguiendo.swift; sourceTree = "<group>"; };
 		52F561802579CCD700A2D028 /* HacerPublicaciónViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HacerPublicaciónViewController.swift"; sourceTree = "<group>"; };
 		52F8AB8E252D63B90016973A /* EvPermanente2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvPermanente2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F8AB91252D63B90016973A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,12 +118,16 @@
 				52541481257802CB006E1570 /* Publicaciones.swift */,
 				520F3B2F2578A7E90098F7BA /* ComentarViewController.swift */,
 				52F561802579CCD700A2D028 /* HacerPublicaciónViewController.swift */,
+				52F209CC257F2E7700581F3C /* SiguiendoViewController.swift */,
+				52F209D2257F2E9900581F3C /* Siguiendo.swift */,
+				52F209CF257F2E8900581F3C /* SiguiendoViewCell.swift */,
 				52F8AB97252D63B90016973A /* Main.storyboard */,
 				52F8AB9A252D63BE0016973A /* Assets.xcassets */,
 				52F8AB9C252D63BE0016973A /* LaunchScreen.storyboard */,
 				52F8AB9F252D63BE0016973A /* Info.plist */,
 				521171C6256439C000069A0A /* GoogleService-Info.plist */,
 				52022E7D2565983800636074 /* Constants.swift */,
+				52DAD61B258140E500F4447E /* PerfilViewController.swift */,
 			);
 			path = EvPermanente2;
 			sourceTree = "<group>";
@@ -260,7 +272,9 @@
 				52E246502533C10C00EDD2EA /* RegistrarUsuarioViewController.swift in Sources */,
 				52F8AB92252D63B90016973A /* AppDelegate.swift in Sources */,
 				52F8AB94252D63B90016973A /* SceneDelegate.swift in Sources */,
+				52F209D0257F2E8900581F3C /* SiguiendoViewCell.swift in Sources */,
 				520F3B1F257876990098F7BA /* PublicacionesViewController.swift in Sources */,
+				52DAD61C258140E600F4447E /* PerfilViewController.swift in Sources */,
 				52E246532533D5C600EDD2EA /* RestablecerContrasenaViewController.swift in Sources */,
 				524B55FC256599A0007D687F /* HomeViewController.swift in Sources */,
 				520F3B302578A7E90098F7BA /* ComentarViewController.swift in Sources */,
@@ -268,6 +282,8 @@
 				520F3B242578847B0098F7BA /* PostTableViewCell.swift in Sources */,
 				52022E7E2565983800636074 /* Constants.swift in Sources */,
 				52541482257802CB006E1570 /* Publicaciones.swift in Sources */,
+				52F209CD257F2E7700581F3C /* SiguiendoViewController.swift in Sources */,
+				52F209D3257F2E9900581F3C /* Siguiendo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
