@@ -81,8 +81,6 @@ class RegistrarUsuarioViewController: UIViewController, UIPickerViewDelegate ,UI
         txtCarreras.clearButtonMode = .whileEditing
         
         
-
-        
     }
     
     //CAMBIAR COLOR DE BORDES DE TEXTFIELD

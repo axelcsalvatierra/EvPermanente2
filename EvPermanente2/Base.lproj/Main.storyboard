@@ -922,7 +922,7 @@
                                             <constraint firstAttribute="height" id="6JJ-J1-ZVx"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jose" translatesAutoresizingMaskIntoConstraints="NO" id="0u2-Sv-cLV">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logocortado.png" translatesAutoresizingMaskIntoConstraints="NO" id="0u2-Sv-cLV">
                                         <rect key="frame" x="140" y="22" width="134" height="119"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
@@ -933,6 +933,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeL-RJ-PCx">
                                         <rect key="frame" x="162.5" y="141.5" width="89" height="30"/>
                                         <state key="normal" title="Cambiar foto"/>
+                                        <connections>
+                                            <action selector="didTapButton" destination="iI7-o3-L98" eventType="touchUpInside" id="CqT-Rr-a38"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORj-NN-XFs">
                                         <rect key="frame" x="0.0" y="191.5" width="414" height="5"/>
@@ -942,26 +945,32 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utu-tj-xOq">
-                                        <rect key="frame" x="359" y="352.5" width="47" height="34"/>
-                                        <state key="normal" title="Editar">
+                                        <rect key="frame" x="359" y="350.5" width="32" height="32"/>
+                                        <state key="normal" image="editar">
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnEditarCarrera:" destination="iI7-o3-L98" eventType="touchUpInside" id="Sbl-ml-uZj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-0a-ONw">
-                                        <rect key="frame" x="359" y="450.5" width="47" height="34"/>
-                                        <state key="normal" title="Editar">
+                                        <rect key="frame" x="359" y="446.5" width="32" height="32"/>
+                                        <state key="normal" image="editar">
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnEditarSede:" destination="iI7-o3-L98" eventType="touchUpInside" id="Y6F-qn-9Is"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftq-Sl-Yc4">
-                                        <rect key="frame" x="0.0" y="241.5" width="414" height="5"/>
+                                        <rect key="frame" x="0.0" y="239.5" width="414" height="5"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ftq-Sl-Yc4" secondAttribute="height" multiplier="414:5" id="QTh-3b-IEt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNm-Me-VsA">
-                                        <rect key="frame" x="0.0" y="246.5" width="119" height="32"/>
+                                        <rect key="frame" x="0.0" y="244.5" width="119" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-tX-cFr">
                                                 <rect key="frame" x="14" y="5" width="91" height="21"/>
@@ -979,26 +988,26 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKs-av-XWd">
-                                        <rect key="frame" x="0.0" y="278.5" width="414" height="5"/>
+                                        <rect key="frame" x="0.0" y="276.5" width="414" height="5"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XKs-av-XWd" secondAttribute="height" multiplier="414:5" id="r2c-lf-Oaa"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wag-XH-0ZI">
-                                        <rect key="frame" x="38" y="317.5" width="71" height="27"/>
+                                        <rect key="frame" x="38" y="315.5" width="71" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sede" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdJ-hh-XKY">
-                                        <rect key="frame" x="38" y="415.5" width="50" height="27"/>
+                                        <rect key="frame" x="38" y="413.5" width="50" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sp-6b-D51">
-                                        <rect key="frame" x="38" y="516.5" width="201" height="27"/>
+                                        <rect key="frame" x="38" y="514.5" width="201" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="WeM-CV-dNv"/>
                                             <constraint firstAttribute="height" constant="27" id="tNp-1s-Rfc"/>
@@ -1007,8 +1016,8 @@
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HOLA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8h-vx-asF">
-                                        <rect key="frame" x="38" y="353" width="292" height="47"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HOLA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8h-vx-asF">
+                                        <rect key="frame" x="38" y="351" width="292" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="95H-fB-9e8"/>
                                             <constraint firstAttribute="width" constant="292" id="v8J-e3-bo7"/>
@@ -1016,8 +1025,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Miraflores" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trr-hH-U1j">
-                                        <rect key="frame" x="38" y="451" width="292" height="47"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Miraflores" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trr-hH-U1j">
+                                        <rect key="frame" x="38" y="449" width="292" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="292" id="7nL-eM-jdI"/>
                                             <constraint firstAttribute="height" constant="47" id="bbe-IT-KbV"/>
@@ -1025,8 +1034,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fecha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6r-tH-r88">
-                                        <rect key="frame" x="38" y="552" width="292" height="47"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="16 abr. 2000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6r-tH-r88">
+                                        <rect key="frame" x="38" y="550" width="292" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="3Kf-XI-NRT"/>
                                             <constraint firstAttribute="width" constant="292" id="TKh-Yb-vU4"/>
@@ -1035,17 +1044,20 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXN-bQ-rJt">
-                                        <rect key="frame" x="359" y="551.5" width="47" height="34"/>
-                                        <state key="normal" title="Editar">
+                                        <rect key="frame" x="359" y="545.5" width="32" height="32"/>
+                                        <state key="normal" image="editar">
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnEditarFecha:" destination="iI7-o3-L98" eventType="touchUpInside" id="kNN-w7-Rpg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-HU-9hw">
-                                        <rect key="frame" x="38" y="606.5" width="220" height="36"/>
+                                        <rect key="frame" x="38" y="604.5" width="220" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Publicaciones Realizadas"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Axel Salvatierra" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-hL-hBo">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Axel Salvatierra" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-hL-hBo">
                                         <rect key="frame" x="8" y="204" width="322" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="bQT-Hp-DkQ"/>
@@ -1055,10 +1067,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qyw-XR-k6A">
-                                        <rect key="frame" x="351" y="204" width="47" height="34"/>
-                                        <state key="normal" title="Editar">
+                                        <rect key="frame" x="351" y="204" width="32" height="32"/>
+                                        <state key="normal" image="editar">
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnEditarUsername:" destination="iI7-o3-L98" eventType="touchUpInside" id="atQ-et-LcK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -1127,8 +1142,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi Perfil" image="person.fill" catalog="system" id="b9J-s7-tVA"/>
                     <connections>
+                        <outlet property="btnCarrera" destination="Utu-tj-xOq" id="cTY-T1-wOO"/>
+                        <outlet property="btnFecha" destination="PXN-bQ-rJt" id="iPe-0U-82P"/>
+                        <outlet property="btnSede" destination="BMa-0a-ONw" id="2d3-62-XZh"/>
+                        <outlet property="btnUsername" destination="Qyw-XR-k6A" id="V3q-0n-5I2"/>
                         <outlet property="constraintBottomScroll" destination="thJ-Kc-PC7" id="fhz-Xt-rCx"/>
+                        <outlet property="fechaNacimiento" destination="p6r-tH-r88" id="9PZ-9u-OIt"/>
                         <outlet property="imgPerfil" destination="0u2-Sv-cLV" id="OlR-gV-J4N"/>
+                        <outlet property="txtCarreras" destination="X8h-vx-asF" id="sce-iw-YYW"/>
+                        <outlet property="txtSede" destination="trr-hH-U1j" id="Uwj-jE-CXL"/>
+                        <outlet property="txtUsername" destination="Iae-hL-hBo" id="SY9-0C-LSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ec-FV-Evy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1647,9 +1670,9 @@
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="cloud.fill" catalog="system" width="128" height="84"/>
         <image name="corazon" width="512" height="512"/>
+        <image name="editar" width="32" height="32"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="jose" width="312" height="280"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
