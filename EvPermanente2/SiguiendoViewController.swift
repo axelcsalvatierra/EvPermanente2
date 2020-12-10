@@ -7,13 +7,18 @@
 
 import UIKit
 
-class SiguiendoViewController: UIViewController {
+class SiguiendoViewController: UIViewController, UITableViewDelegate {
+    
+    //@IBOutlet weak var tblSeguir:UITableView!
     
     var arraySiguiendo = [Siguiendo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        /*tblSeguir.dataSource = self
+        tblSeguir.delegate = self*/
         
         self.arraySiguiendo.append(Siguiendo(username: "Alejandra Lopez", profileImage: UIImage (named: "alejandra")!))
         
@@ -47,7 +52,19 @@ extension SiguiendoViewController: UITableViewDataSource {
         
         cell.objPost = self.arraySiguiendo[indexPath.row]
         
+        //cell.btnNoSeguir.addTarget(self, action: #selector(deleteRow(_ :)), for: .touchUpInside)
+        
         return cell
     }
+    
+    /*@objc func deleteRow(_ sender: UIButton) {
+        
+        let point = sender.convert(CGPoint.zero, to: tblSeguir)
+        guard let indexPath = tblSeguir.indexPathForRow(at: point) else {
+            return
+        }
+        arraySiguiendo.remove(at: indexPath.row)
+        tblSeguir.deleteRows(at: [indexPath], with: .left)
+    }*/
     
 }

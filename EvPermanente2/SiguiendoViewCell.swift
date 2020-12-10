@@ -12,6 +12,8 @@ class SiguiendoViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var btnNoSeguir: UIButton!
+    
     
     var objPost: Siguiendo! {
         
