@@ -891,14 +891,11 @@
                                                 <constraint firstItem="TLR-nM-2bN" firstAttribute="top" secondItem="oar-0q-rSx" secondAttribute="bottom" constant="20" id="kOz-xA-dAB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="btnNoSeguir" destination="TLR-nM-2bN" id="R25-LL-zMD"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="R7M-6u-07W" id="3Ey-Hh-ZJp"/>
-                                    <outlet property="delegate" destination="R7M-6u-07W" id="wdk-aH-DBX"/>
+                                    <outlet property="dataSource" destination="LQ7-nt-PkX" id="wlJ-4K-4OK"/>
+                                    <outlet property="delegate" destination="LQ7-nt-PkX" id="y68-Mt-DMy"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -927,7 +924,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Siguiendo" image="person.3.fill" catalog="system" id="J28-q6-BiG"/>
                     <connections>
-                        <outlet property="tblSeguir" destination="V7z-no-9w5" id="jcA-fP-3Hu"/>
+                        <outlet property="tblSeguir" destination="V7z-no-9w5" id="STE-9c-8Np"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwj-1C-lXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

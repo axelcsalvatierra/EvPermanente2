@@ -9,7 +9,7 @@ import UIKit
 
 class SiguiendoViewController: UIViewController, UITableViewDelegate {
     
-    //@IBOutlet weak var tblSeguir:UITableView!
+    @IBOutlet weak var tblSeguir:UITableView!
     
     var arraySiguiendo = [Siguiendo]()
     
@@ -52,7 +52,7 @@ extension SiguiendoViewController: UITableViewDataSource {
         
         cell.objPost = self.arraySiguiendo[indexPath.row]
         
-        //cell.btnNoSeguir.addTarget(self, action: #selector(deleteRow(_ :)), for: .touchUpInside)
+        /*cell.btnNoSeguir.addTarget(self, action: #selector(deleteRow(_ :)), for: .touchUpInside)*/
         
         return cell
     }
